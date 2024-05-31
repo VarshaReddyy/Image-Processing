@@ -1,0 +1,15 @@
+import cv2 as cv 
+img1=cv.imread("photos/b&w1.png")
+img2=cv.imread("photos/b&w2.png")
+dest_and=cv.bitwise_and(img2,img1,mask=None)
+dest_or=cv.bitwise_or(img2,img1,mask=None)
+dest_xor=cv.bitwise_xor(img2,img1,mask=None)
+dest_not1 = cv.bitwise_not(img1, mask = None) 
+dest_not2 = cv.bitwise_not(img2, mask = None) 
+cv.imshow('bitwise_and',dest_and)
+cv.imshow('bitwise_or',dest_or)
+cv.imshow('bitwise_xor',dest_xor)
+cv.imshow('bitwise_not1',dest_not1)
+cv.imshow('bitwise_not2',dest_not2)
+if cv.waitKey(0) & 0xFF==27:
+    cv.destroyAllWindows()
